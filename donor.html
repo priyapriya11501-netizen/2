@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Dashboard - KindNet</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="https://images.pexels.com/photos/6995244/pexels-photo-6995244.jpeg?auto=compress&cs=tinysrgb&w=50&h=50" alt="KindNet Logo" class="nav-logo">
+                <span class="brand-text">KindNet</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="donate.html" class="nav-link">Browse Causes</a>
+                <a href="donor.html" class="nav-link active">Donor Hub</a>
+                <a href="ngo.html" class="nav-link">NGO Portal</a>
+                <a href="receiver.html" class="nav-link">Request Help</a>
+                <a href="showcase.html" class="nav-link">Showcase</a>
+                <button class="btn btn-primary">Sign In</button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <section class="dashboard-header">
+        <div class="container">
+            <div class="dashboard-welcome">
+                <div class="welcome-content">
+                    <h1 class="dashboard-title">Welcome back, Sarah!</h1>
+                    <p class="dashboard-subtitle">Track your impact and discover new ways to help</p>
+                </div>
+                <div class="welcome-avatar">
+                    <div class="profile-image-section">
+                        <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=100&h=100" alt="User Avatar" class="avatar current-profile-image">
+                        <div class="profile-upload-controls">
+                            <button class="btn btn-outline btn-small profile-upload-btn">Change Photo</button>
+                        </div>
+                    </div>
+                    <div class="user-level">
+                        <span class="level-badge">Gold Donor</span>
+                        <div class="level-progress">
+                            <div class="level-fill" style="width: 75%"></div>
+                        </div>
+                        <span class="level-text">750/1000 points to Platinum</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Stats -->
+    <section class="dashboard-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon donation">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">₹1,45,000</div>
+                        <div class="stat-label">Total Donated</div>
+                        <div class="stat-change positive">+12% this month</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon campaigns">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">23</div>
+                        <div class="stat-label">Campaigns Supported</div>
+                        <div class="stat-change positive">+3 this month</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon impact">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">1,250</div>
+                        <div class="stat-label">Lives Impacted</div>
+                        <div class="stat-change positive">+180 this month</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon volunteer">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">42</div>
+                        <div class="stat-label">Volunteer Hours</div>
+                        <div class="stat-change positive">+8 this week</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-content">
+        <div class="container">
+            <div class="dashboard-grid">
+                <!-- Recent Activity -->
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h3 class="section-title">Recent Activity</h3>
+                        <a href="#" class="section-link">View All</a>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon donation">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-text">You donated <strong>₹5,000</strong> to Emergency Food Relief</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon volunteer">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-text">You signed up to volunteer at the Community Kitchen</p>
+                                <span class="activity-time">1 day ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon achievement">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="8" r="7" stroke="currentColor" stroke-width="2"/>
+                                    <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-text">You earned the <strong>"Consistent Giver"</strong> badge</p>
+                                <span class="activity-time">3 days ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon update">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14 9V5a3 3 0 0 0-6 0v4" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="2" y="9" width="20" height="12" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="activity-content">
+                                <p class="activity-text">Medical Equipment campaign reached 100% funding</p>
+                                <span class="activity-time">5 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements & Badges -->
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h3 class="section-title">Achievements</h3>
+                        <a href="#" class="section-link">View All</a>
+                    </div>
+                    <div class="badges-grid">
+                        <div class="badge-item earned">
+                            <div class="badge-icon">🏆</div>
+                            <div class="badge-info">
+                                <h4 class="badge-title">First Donation</h4>
+                                <p class="badge-description">Made your first donation</p>
+                            </div>
+                        </div>
+                        <div class="badge-item earned">
+                            <div class="badge-icon">🔥</div>
+                            <div class="badge-info">
+                                <h4 class="badge-title">Consistent Giver</h4>
+                                <p class="badge-description">Donated for 3 months straight</p>
+                            </div>
+                        </div>
+                        <div class="badge-item earned">
+                            <div class="badge-icon">💝</div>
+                            <div class="badge-info">
+                                <h4 class="badge-title">Big Heart</h4>
+                                <p class="badge-description">Donated over ₹1,00,000</p>
+                            </div>
+                        </div>
+                        <div class="badge-item locked">
+                            <div class="badge-icon">🌟</div>
+                            <div class="badge-info">
+                                <h4 class="badge-title">Community Hero</h4>
+                                <p class="badge-description">Help 2,000+ people</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Supported Campaigns -->
+                <div class="dashboard-section full-width">
+                    <div class="section-header">
+                        <h3 class="section-title">Your Supported Campaigns</h3>
+                        <a href="donate.html" class="section-link">Browse More</a>
+                    </div>
+                    <div class="campaigns-list">
+                        <div class="campaign-item">
+                            <div class="campaign-image">
+                                <img src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=100&h=100" alt="Campaign">
+                            </div>
+                            <div class="campaign-info">
+                                <h4 class="campaign-title">Emergency Food Relief</h4>
+                                <p class="campaign-org">Relief Foundation</p>
+                                <div class="campaign-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 75%"></div>
+                                    </div>
+                                    <span class="progress-text">75% funded</span>
+                                </div>
+                            </div>
+                            <div class="campaign-stats">
+                                <div class="stat">
+                                    <span class="stat-value">₹15,000</span>
+                                    <span class="stat-label">Your contribution</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">350</span>
+                                    <span class="stat-label">People helped</span>
+                                </div>
+                            </div>
+                            <div class="campaign-actions">
+                                <button class="btn btn-outline btn-small">View Details</button>
+                                <button class="btn btn-primary btn-small">Donate Again</button>
+                            </div>
+                        </div>
+                        <div class="campaign-item">
+                            <div class="campaign-image">
+                                <img src="https://images.pexels.com/photos/8926553/pexels-photo-8926553.jpeg?auto=compress&cs=tinysrgb&w=100&h=100" alt="Campaign">
+                            </div>
+                            <div class="campaign-info">
+                                <h4 class="campaign-title">School Books for Rural Children</h4>
+                                <p class="campaign-org">Education First</p>
+                                <div class="campaign-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 42%"></div>
+                                    </div>
+                                    <span class="progress-text">42% funded</span>
+                                </div>
+                            </div>
+                            <div class="campaign-stats">
+                                <div class="stat">
+                                    <span class="stat-value">₹8,500</span>
+                                    <span class="stat-label">Your contribution</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">45</span>
+                                    <span class="stat-label">Students helped</span>
+                                </div>
+                            </div>
+                            <div class="campaign-actions">
+                                <button class="btn btn-outline btn-small">View Details</button>
+                                <button class="btn btn-primary btn-small">Donate Again</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leaderboard -->
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h3 class="section-title">Community Leaderboard</h3>
+                        <div class="leaderboard-filter">
+                            <select class="filter-select">
+                                <option>This Month</option>
+                                <option>This Year</option>
+                                <option>All Time</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="leaderboard">
+                        <div class="leaderboard-item current-user">
+                            <div class="rank">#7</div>
+                            <div class="user-info">
+                                <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=40&h=40" alt="You" class="user-avatar">
+                                <span class="user-name">You</span>
+                            </div>
+                            <div class="user-points">2,450 pts</div>
+                        </div>
+                        <div class="leaderboard-item">
+                            <div class="rank">#1</div>
+                            <div class="user-info">
+                                <img src="https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg?auto=compress&cs=tinysrgb&w=40&h=40" alt="User" class="user-avatar">
+                                <span class="user-name">Rajesh Kumar</span>
+                            </div>
+                            <div class="user-points">8,750 pts</div>
+                        </div>
+                        <div class="leaderboard-item">
+                            <div class="rank">#2</div>
+                            <div class="user-info">
+                                <img src="https://images.pexels.com/photos/3791136/pexels-photo-3791136.jpeg?auto=compress&cs=tinysrgb&w=40&h=40" alt="User" class="user-avatar">
+                                <span class="user-name">Priya Sharma</span>
+                            </div>
+                            <div class="user-points">7,200 pts</div>
+                        </div>
+                        <div class="leaderboard-item">
+                            <div class="rank">#3</div>
+                            <div class="user-info">
+                                <img src="https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg?auto=compress&cs=tinysrgb&w=40&h=40" alt="User" class="user-avatar">
+                                <span class="user-name">Amit Patel</span>
+                            </div>
+                            <div class="user-points">6,890 pts</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Volunteer Opportunities -->
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h3 class="section-title">Volunteer Opportunities</h3>
+                        <a href="#" class="section-link">View All</a>
+                    </div>
+                    <div class="volunteer-list">
+                        <div class="volunteer-item">
+                            <div class="volunteer-info">
+                                <h4 class="volunteer-title">Community Kitchen Help</h4>
+                                <p class="volunteer-org">Local Food Bank</p>
+                                <div class="volunteer-details">
+                                    <span class="volunteer-date">Dec 25, 2024</span>
+                                    <span class="volunteer-time">9:00 AM - 2:00 PM</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-small">Join</button>
+                        </div>
+                        <div class="volunteer-item">
+                            <div class="volunteer-info">
+                                <h4 class="volunteer-title">Teaching Session</h4>
+                                <p class="volunteer-org">Education First</p>
+                                <div class="volunteer-details">
+                                    <span class="volunteer-date">Dec 28, 2024</span>
+                                    <span class="volunteer-time">4:00 PM - 6:00 PM</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-small">Join</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="https://images.pexels.com/photos/6995244/pexels-photo-6995244.jpeg?auto=compress&cs=tinysrgb&w=50&h=50" alt="KindNet Logo" class="footer-logo">
+                        <span class="brand-text">KindNet</span>
+                    </div>
+                    <p class="footer-description">Connecting hearts, changing lives. Together for a better tomorrow.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">For Donors</h4>
+                    <ul class="footer-links">
+                        <li><a href="donate.html">Browse Causes</a></li>
+                        <li><a href="donor.html">Donor Dashboard</a></li>
+                        <li><a href="#">Impact Reports</a></li>
+                        <li><a href="#">Recurring Donations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 KindNet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

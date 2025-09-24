@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Donations - KindNet</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="https://images.pexels.com/photos/6995244/pexels-photo-6995244.jpeg?auto=compress&cs=tinysrgb&w=50&h=50" alt="KindNet Logo" class="nav-logo">
+                <span class="brand-text">KindNet</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="donate.html" class="nav-link">Browse Causes</a>
+                <a href="food-donations.html" class="nav-link active">Food Donations</a>
+                <a href="showcase.html" class="nav-link">Showcase</a>
+                <div class="user-info" id="user-info" style="display: none;">
+                    <span class="user-name" id="user-name">User</span>
+                    <button class="btn btn-outline btn-small" id="logout-btn">Logout</button>
+                </div>
+                <button class="btn btn-primary" id="login-btn">Sign In</button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header food-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="page-title">Food Donations</h1>
+                <p class="page-subtitle">Share surplus food and help reduce waste while feeding those in need</p>
+                <div class="header-actions">
+                    <button class="btn btn-primary btn-large" id="post-food-btn">Post Food Donation</button>
+                    <button class="btn btn-outline btn-large" id="view-requests-btn">View Requests</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters and Sorting -->
+    <section class="food-filters">
+        <div class="container">
+            <div class="filters-header">
+                <h3>Available Food Donations</h3>
+                <div class="filter-controls">
+                    <select class="filter-select" id="food-type-filter">
+                        <option value="">All Food Types</option>
+                        <option value="cooked">Cooked Food</option>
+                        <option value="raw">Raw Ingredients</option>
+                        <option value="packaged">Packaged Food</option>
+                        <option value="fruits">Fruits & Vegetables</option>
+                        <option value="dairy">Dairy Products</option>
+                        <option value="grains">Grains & Cereals</option>
+                    </select>
+                    <select class="filter-select" id="location-filter">
+                        <option value="">All Locations</option>
+                        <option value="chennai">Chennai</option>
+                        <option value="bangalore">Bangalore</option>
+                        <option value="hyderabad">Hyderabad</option>
+                        <option value="kochi">Kochi</option>
+                        <option value="coimbatore">Coimbatore</option>
+                    </select>
+                    <select class="filter-select" id="urgency-filter">
+                        <option value="">All Urgency</option>
+                        <option value="immediate">Immediate (2-4 hours)</option>
+                        <option value="today">Today</option>
+                        <option value="tomorrow">Tomorrow</option>
+                    </select>
+                    <select class="filter-select" id="sort-by">
+                        <option value="recent">Most Recent</option>
+                        <option value="expiry">Expiry Date</option>
+                        <option value="quantity">Quantity</option>
+                        <option value="distance">Distance</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Donations List -->
+    <section class="food-donations-list">
+        <div class="container">
+            <div class="donations-grid" id="donations-grid">
+                <!-- Sample Food Donation Cards -->
+                <div class="food-donation-card urgent" data-type="cooked" data-location="chennai" data-urgency="immediate">
+                    <div class="food-image">
+                        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=300&h=200" alt="South Indian Meal" class="donation-image">
+                        <div class="urgency-badge immediate">Immediate Pickup</div>
+                        <div class="food-type-badge cooked">Cooked Food</div>
+                    </div>
+                    <div class="food-content">
+                        <h4 class="food-title">Traditional South Indian Meal</h4>
+                        <p class="food-description">Fresh sambar, rasam, rice, and vegetables. Prepared for 50 people but only 30 attended our function.</p>
+                        
+                        <div class="food-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Quantity:</span>
+                                <span class="detail-value">20 servings</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Expiry:</span>
+                                <span class="detail-value">4 hours</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value">T. Nagar, Chennai</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Contact:</span>
+                                <span class="detail-value">+91 98765 43210</span>
+                            </div>
+                        </div>
+
+                        <div class="food-meta">
+                            <span class="donor-info">
+                                <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=30&h=30" alt="Donor" class="donor-avatar">
+                                Priya Sharma
+                            </span>
+                            <span class="posted-time">Posted 30 minutes ago</span>
+                        </div>
+
+                        <div class="food-actions">
+                            <button class="btn btn-primary accept-btn" data-donation-id="1">Accept Donation</button>
+                            <button class="btn btn-outline">Contact Donor</button>
+                            <button class="btn btn-outline">Share</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-donation-card" data-type="packaged" data-location="bangalore" data-urgency="today">
+                    <div class="food-image">
+                        <img src="https://images.pexels.com/photos/4198019/pexels-photo-4198019.jpeg?auto=compress&cs=tinysrgb&w=300&h=200" alt="Packaged Food" class="donation-image">
+                        <div class="urgency-badge today">Pickup Today</div>
+                        <div class="food-type-badge packaged">Packaged Food</div>
+                    </div>
+                    <div class="food-content">
+                        <h4 class="food-title">Packaged Snacks & Biscuits</h4>
+                        <p class="food-description">Assorted packaged snacks, biscuits, and ready-to-eat items. All items are well within expiry date.</p>
+                        
+                        <div class="food-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Quantity:</span>
+                                <span class="detail-value">50 packets</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Expiry:</span>
+                                <span class="detail-value">2-6 months</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value">Koramangala, Bangalore</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Contact:</span>
+                                <span class="detail-value">+91 87654 32109</span>
+                            </div>
+                        </div>
+
+                        <div class="food-meta">
+                            <span class="donor-info">
+                                <img src="https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg?auto=compress&cs=tinysrgb&w=30&h=30" alt="Donor" class="donor-avatar">
+                                Rajesh Kumar
+                            </span>
+                            <span class="posted-time">Posted 2 hours ago</span>
+                        </div>
+
+                        <div class="food-actions">
+                            <button class="btn btn-primary accept-btn" data-donation-id="2">Accept Donation</button>
+                            <button class="btn btn-outline">Contact Donor</button>
+                            <button class="btn btn-outline">Share</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-donation-card" data-type="fruits" data-location="hyderabad" data-urgency="tomorrow">
+                    <div class="food-image">
+                        <img src="https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&w=300&h=200" alt="Fresh Fruits" class="donation-image">
+                        <div class="urgency-badge tomorrow">Pickup Tomorrow</div>
+                        <div class="food-type-badge fruits">Fruits & Vegetables</div>
+                    </div>
+                    <div class="food-content">
+                        <h4 class="food-title">Fresh Fruits & Vegetables</h4>
+                        <p class="food-description">Fresh seasonal fruits and vegetables from our farm. Slightly overripe but perfectly edible and nutritious.</p>
+                        
+                        <div class="food-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Quantity:</span>
+                                <span class="detail-value">25 kg mixed</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Expiry:</span>
+                                <span class="detail-value">2-3 days</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value">Jubilee Hills, Hyderabad</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Contact:</span>
+                                <span class="detail-value">+91 76543 21098</span>
+                            </div>
+                        </div>
+
+                        <div class="food-meta">
+                            <span class="donor-info">
+                                <img src="https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg?auto=compress&cs=tinysrgb&w=30&h=30" alt="Donor" class="donor-avatar">
+                                Anita Reddy
+                            </span>
+                            <span class="posted-time">Posted 5 hours ago</span>
+                        </div>
+
+                        <div class="food-actions">
+                            <button class="btn btn-primary accept-btn" data-donation-id="3">Accept Donation</button>
+                            <button class="btn btn-outline">Contact Donor</button>
+                            <button class="btn btn-outline">Share</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="load-more">
+                <button class="btn btn-outline" id="load-more-btn">Load More Donations</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="https://images.pexels.com/photos/6995244/pexels-photo-6995244.jpeg?auto=compress&cs=tinysrgb&w=50&h=50" alt="KindNet Logo" class="footer-logo">
+                        <span class="brand-text">KindNet</span>
+                    </div>
+                    <p class="footer-description">Connecting hearts, changing lives. Together for a better tomorrow.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Food Donations</h4>
+                    <ul class="footer-links">
+                        <li><a href="food-donations.html">Browse Food</a></li>
+                        <li><a href="post-food.html">Post Food</a></li>
+                        <li><a href="#">Food Safety Guidelines</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 KindNet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Food Posting Modal -->
+    <div id="food-posting-modal" class="modal">
+        <div class="modal-content large">
+            <span class="modal-close">&times;</span>
+            <div class="modal-header">
+                <h3 class="modal-title">Post Food Donation</h3>
+                <p class="modal-subtitle">Share your surplus food with those in need</p>
+            </div>
+            <form class="food-posting-form" id="food-posting-form">
+                <div class="form-section">
+                    <h4>Food Details</h4>
+                    
+                    <div class="form-group">
+                        <label for="food-name">Food Item Name *</label>
+                        <input type="text" id="food-name" required placeholder="e.g., South Indian Meal, Rice & Curry">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="food-description">Description *</label>
+                        <textarea id="food-description" required rows="3" placeholder="Describe the food items, preparation method, ingredients, etc."></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="food-type">Food Type *</label>
+                            <select id="food-type" required>
+                                <option value="">Select Type</option>
+                                <option value="cooked">Cooked Food</option>
+                                <option value="raw">Raw Ingredients</option>
+                                <option value="packaged">Packaged Food</option>
+                                <option value="fruits">Fruits & Vegetables</option>
+                                <option value="dairy">Dairy Products</option>
+                                <option value="grains">Grains & Cereals</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="food-quantity">Quantity *</label>
+                            <input type="text" id="food-quantity" required placeholder="e.g., 20 servings, 5 kg, 50 packets">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry-time">Best Before/Expiry *</label>
+                            <select id="expiry-time" required>
+                                <option value="">Select Timeframe</option>
+                                <option value="2-hours">2 hours</option>
+                                <option value="4-hours">4 hours</option>
+                                <option value="today">End of today</option>
+                                <option value="tomorrow">Tomorrow</option>
+                                <option value="2-days">2 days</option>
+                                <option value="week">1 week</option>
+                                <option value="month">1 month</option>
+                                <option value="longer">Longer than 1 month</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickup-urgency">Pickup Urgency *</label>
+                            <select id="pickup-urgency" required>
+                                <option value="">Select Urgency</option>
+                                <option value="immediate">Immediate (2-4 hours)</option>
+                                <option value="today">Today</option>
+                                <option value="tomorrow">Tomorrow</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h4>Pickup Information</h4>
+                    
+                    <div class="form-group">
+                        <label for="pickup-address">Pickup Address *</label>
+                        <textarea id="pickup-address" required rows="2" placeholder="Enter complete pickup address"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickup-city">City *</label>
+                            <select id="pickup-city" required>
+                                <option value="">Select City</option>
+                                <option value="chennai">Chennai</option>
+                                <option value="bangalore">Bangalore</option>
+                                <option value="hyderabad">Hyderabad</option>
+                                <option value="kochi">Kochi</option>
+                                <option value="coimbatore">Coimbatore</option>
+                                <option value="madurai">Madurai</option>
+                                <option value="trivandrum">Trivandrum</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickup-pincode">Pincode *</label>
+                            <input type="text" id="pickup-pincode" required placeholder="Enter pincode">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickup-time-from">Available From *</label>
+                            <input type="time" id="pickup-time-from" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickup-time-to">Available Until *</label>
+                            <input type="time" id="pickup-time-to" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h4>Contact Information</h4>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-name">Contact Person *</label>
+                            <input type="text" id="contact-name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phone">Phone Number *</label>
+                            <input type="tel" id="contact-phone" required placeholder="+91 XXXXX XXXXX">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="special-instructions">Special Instructions</label>
+                        <textarea id="special-instructions" rows="2" placeholder="Any special pickup instructions, dietary information, etc."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h4>Food Images</h4>
+                    <div class="image-upload-section">
+                        <div class="image-upload-zone">
+                            <div class="upload-placeholder">
+                                <div class="upload-placeholder-icon">📷</div>
+                                <div class="upload-placeholder-text">
+                                    <h4>Upload Food Images</h4>
+                                    <p>Add photos of the food items</p>
+                                    <p>Drag & drop images here or <span class="upload-browse-btn">browse files</span></p>
+                                </div>
+                            </div>
+                            <input type="file" class="image-input" multiple accept="image/*">
+                        </div>
+                        <div class="image-preview-gallery"></div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h4>Terms & Conditions</h4>
+                    <div class="consent-items">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="food-safety-confirm" required>
+                            <span class="checkmark"></span>
+                            I confirm that the food is safe for consumption and prepared in hygienic conditions
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="pickup-availability" required>
+                            <span class="checkmark"></span>
+                            I will be available for pickup during the specified time
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="notification-consent" required>
+                            <span class="checkmark"></span>
+                            I agree to receive notifications about this donation
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline">Save as Draft</button>
+                    <button type="submit" class="btn btn-primary btn-large">Post Food Donation</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notification-container" class="notification-container"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/food-donations.js"></script>
+</body>
+</html>

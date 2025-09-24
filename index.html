@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KindNet - Together for a Better Tomorrow</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="https://images.pexels.com/photos/6995244/pexels-photo-6995244.jpeg?auto=compress&cs=tinysrgb&w=50&h=50" alt="KindNet Logo" class="nav-logo">
+                <span class="brand-text">KindNet</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="donate.html" class="nav-link">Browse Causes</a>
+                <a href="donor.html" class="nav-link">Donor Hub</a>
+                <a href="ngo.html" class="nav-link">NGO Portal</a>
+                <a href="receiver.html" class="nav-link">Request Help</a>
+                <a href="showcase.html" class="nav-link">Showcase</a>
+                <button class="btn btn-primary">Sign In</button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="https://images.pexels.com/photos/6995244/pexels-photo-6995244.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080" alt="People helping each other" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Together for a Better Tomorrow</h1>
+                <p class="hero-subtitle">Connect with verified causes, make meaningful impact, and join a community of changemakers working to build a better world.</p>
+                <div class="hero-actions">
+                    <a href="donate.html" class="btn btn-primary btn-large">Browse Causes</a>
+                    <a href="donor.html" class="btn btn-outline btn-large">Become a Donor</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Statistics -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="50000">0</div>
+                    <div class="stat-label">Lives Impacted</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="1250">0</div>
+                    <div class="stat-label">Active Campaigns</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="25000">0</div>
+                    <div class="stat-label">Generous Donors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-label">Verified NGOs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Campaigns -->
+    <section class="featured-campaigns">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Campaigns</h2>
+                <p class="section-subtitle">Urgent causes that need your immediate attention</p>
+            </div>
+            <div class="campaigns-grid">
+                <div class="campaign-card urgent">
+                    <div class="campaign-image-gallery">
+                        <img src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=400&h=250" alt="Emergency Food Relief" class="gallery-main-image">
+                        <img src="https://images.pexels.com/photos/6995244/pexels-photo-6995244.jpeg?auto=compress&cs=tinysrgb&w=400&h=250" alt="Food Distribution" class="gallery-main-image" style="display: none;">
+                        <img src="https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=400&h=250" alt="Community Support" class="gallery-main-image" style="display: none;">
+                        <div class="campaign-badge urgent">Urgent</div>
+                        <div class="campaign-category">Food</div>
+                        <div class="gallery-indicators">
+                            <div class="gallery-indicator active"></div>
+                            <div class="gallery-indicator"></div>
+                            <div class="gallery-indicator"></div>
+                        </div>
+                        <button class="gallery-nav prev">‹</button>
+                        <button class="gallery-nav next">›</button>
+                    </div>
+                    <div class="campaign-content">
+                        <h3 class="campaign-title">Emergency Food Relief for Flood Victims</h3>
+                        <p class="campaign-description">Immediate food assistance needed for 500 families affected by recent floods in Chennai.</p>
+                        <div class="campaign-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 68%"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-text">₹6,80,000 raised of ₹10,00,000</span>
+                                <span class="progress-percent">68%</span>
+                            </div>
+                        </div>
+                        <div class="campaign-meta">
+                            <span class="meta-item">
+                                <img src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=30&h=30" alt="NGO">
+                                Relief Foundation
+                            </span>
+                            <span class="meta-item">3 days left</span>
+                        </div>
+                        <button class="btn btn-primary btn-full">Donate Now</button>
+                    </div>
+                </div>
+
+                <div class="campaign-card">
+                    <div class="campaign-image-gallery">
+                        <img src="https://images.pexels.com/photos/8926553/pexels-photo-8926553.jpeg?auto=compress&cs=tinysrgb&w=400&h=250" alt="Education Support" class="gallery-main-image">
+                        <img src="https://images.pexels.com/photos/8923542/pexels-photo-8923542.jpeg?auto=compress&cs=tinysrgb&w=400&h=250" alt="Students Learning" class="gallery-main-image" style="display: none;">
+                        <div class="campaign-category">Education</div>
+                        <div class="gallery-indicators">
+                            <div class="gallery-indicator active"></div>
+                            <div class="gallery-indicator"></div>
+                        </div>
+                        <button class="gallery-nav prev">‹</button>
+                        <button class="gallery-nav next">›</button>
+                    </div>
+                    <div class="campaign-content">
+                        <h3 class="campaign-title">School Books for Rural Children</h3>
+                        <p class="campaign-description">Help provide textbooks and educational materials for 200 underprivileged students.</p>
+                        <div class="campaign-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 42%"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-text">₹42,000 raised of ₹1,00,000</span>
+                                <span class="progress-percent">42%</span>
+                            </div>
+                        </div>
+                        <div class="campaign-meta">
+                            <span class="meta-item">
+                                <img src="https://images.pexels.com/photos/8926553/pexels-photo-8926553.jpeg?auto=compress&cs=tinysrgb&w=30&h=30" alt="NGO">
+                                Education First
+                            </span>
+                            <span class="meta-item">12 days left</span>
+                        </div>
+                        <button class="btn btn-primary btn-full">Donate Now</button>
+                    </div>
+                </div>
+
+                <div class="campaign-card">
+                    <div class="campaign-image-gallery">
+                        <img src="https://images.pexels.com/photos/6749773/pexels-photo-6749773.jpeg?auto=compress&cs=tinysrgb&w=400&h=250" alt="Medical Aid" class="gallery-main-image">
+                        <div class="campaign-category">Healthcare</div>
+                        <div class="gallery-indicators">
+                            <div class="gallery-indicator active"></div>
+                        </div>
+                    </div>
+                    <div class="campaign-content">
+                        <h3 class="campaign-title">Medical Equipment for Rural Clinic</h3>
+                        <p class="campaign-description">Essential medical equipment needed to serve 5,000 patients in remote villages.</p>
+                        <div class="campaign-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-text">₹7,80,000 raised of ₹10,00,000</span>
+                                <span class="progress-percent">78%</span>
+                            </div>
+                        </div>
+                        <div class="campaign-meta">
+                            <span class="meta-item">
+                                <img src="https://images.pexels.com/photos/6749773/pexels-photo-6749773.jpeg?auto=compress&cs=tinysrgb&w=30&h=30" alt="NGO">
+                                Health Heroes
+                            </span>
+                            <span class="meta-item">8 days left</span>
+                        </div>
+                        <button class="btn btn-primary btn-full">Donate Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="section-footer">
+                <a href="donate.html" class="btn btn-outline">View All Campaigns</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Preview -->
+    <section class="map-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Find Causes Near You</h2>
+                <p class="section-subtitle">Discover local donation opportunities and make a direct impact in your community</p>
+            </div>
+            <div class="map-container">
+                <div id="map-preview" class="map"></div>
+                <div class="map-overlay">
+                    <div class="map-info">
+                        <h3>Explore Local Causes</h3>
+                        <p>Use our interactive map to find verified causes, NGOs, and people in need near your location.</p>
+                        <a href="donate.html" class="btn btn-primary">Explore Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How KindNet Works</h2>
+                <p class="section-subtitle">Simple steps to make a meaningful impact</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polyline points="7.5,4.21 12,6.81 16.5,4.21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polyline points="7.5,19.79 7.5,14.6 3,12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polyline points="21,12 16.5,14.6 16.5,19.79" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polyline points="12,22.81 12,17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Discover Causes</h3>
+                    <p class="step-description">Browse verified campaigns by category, location, or urgency. Every cause is vetted by our partner NGOs.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Make Your Impact</h3>
+                    <p class="step-description">Donate money, volunteer time, or contribute resources. Choose one-time or recurring contributions.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Track Results</h3>
+                    <p class="step-description">Get real-time updates on your impact. See photos, progress reports, and direct messages from beneficiaries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Make a Difference?</h2>
+                <p class="cta-description">Join thousands of donors who are already making an impact in their communities and beyond.</p>
+                <div class="cta-actions">
+                    <a href="donate.html" class="btn btn-primary btn-large">Start Donating</a>
+                    <a href="receiver.html" class="btn btn-outline-white btn-large">Request Help</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="https://images.pexels.com/photos/6995244/pexels-photo-6995244.jpeg?auto=compress&cs=tinysrgb&w=50&h=50" alt="KindNet Logo" class="footer-logo">
+                        <span class="brand-text">KindNet</span>
+                    </div>
+                    <p class="footer-description">Connecting hearts, changing lives. Together for a better tomorrow.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.752-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.017.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">For Donors</h4>
+                    <ul class="footer-links">
+                        <li><a href="donate.html">Browse Causes</a></li>
+                        <li><a href="donor.html">Donor Dashboard</a></li>
+                        <li><a href="#">Impact Reports</a></li>
+                        <li><a href="#">Recurring Donations</a></li>
+                        <li><a href="#">Volunteer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">For Organizations</h4>
+                    <ul class="footer-links">
+                        <li><a href="ngo.html">NGO Portal</a></li>
+                        <li><a href="showcase.html">Corporate Showcase</a></li>
+                        <li><a href="#">Verification Process</a></li>
+                        <li><a href="#">Campaign Management</a></li>
+                        <li><a href="#">Partnership</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Safety & Trust</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 KindNet. All rights reserved. Together for a Better Tomorrow.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Donation Modal -->
+    <div id="donation-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h3 class="modal-title">Make a Donation</h3>
+            <form class="donation-form">
+                <div class="amount-selector">
+                    <div class="amount-options">
+                        <button type="button" class="amount-btn" data-amount="500">₹500</button>
+                        <button type="button" class="amount-btn" data-amount="1000">₹1,000</button>
+                        <button type="button" class="amount-btn" data-amount="2500">₹2,500</button>
+                        <button type="button" class="amount-btn" data-amount="5000">₹5,000</button>
+                    </div>
+                    <input type="number" class="amount-input" placeholder="Enter custom amount" min="100">
+                </div>
+                <div class="form-group">
+                    <label for="donor-name">Full Name</label>
+                    <input type="text" id="donor-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="donor-email">Email Address</label>
+                    <input type="email" id="donor-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="donor-phone">Phone Number</label>
+                    <input type="tel" id="donor-phone" required>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="recurring"> Make this a monthly donation
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="anonymous"> Donate anonymously
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Proceed to Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

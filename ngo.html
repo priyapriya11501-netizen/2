@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Dashboard - KindNet</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="https://images.pexels.com/photos/6995244/pexels-photo-6995244.jpeg?auto=compress&cs=tinysrgb&w=50&h=50" alt="KindNet Logo" class="nav-logo">
+                <span class="brand-text">KindNet</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="donate.html" class="nav-link">Browse Causes</a>
+                <a href="donor.html" class="nav-link">Donor Hub</a>
+                <a href="ngo.html" class="nav-link active">NGO Portal</a>
+                <a href="receiver.html" class="nav-link">Request Help</a>
+                <a href="showcase.html" class="nav-link">Showcase</a>
+                <button class="btn btn-primary">Sign In</button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- NGO Dashboard Header -->
+    <section class="ngo-header">
+        <div class="container">
+            <div class="ngo-welcome">
+                <div class="ngo-info">
+                    <img src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=100&h=100" alt="Relief Foundation Logo" class="ngo-logo">
+                    <div class="ngo-details">
+                        <h1 class="ngo-name">Relief Foundation</h1>
+                        <p class="ngo-tagline">Providing emergency aid to disaster-affected communities</p>
+                        <div class="ngo-badges">
+                            <span class="badge verified">✓ Verified NGO</span>
+                            <span class="badge featured">⭐ Featured Organization</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ngo-actions">
+                    <button class="btn btn-primary">Create Campaign</button>
+                    <button class="btn btn-outline">View Profile</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NGO Statistics -->
+    <section class="ngo-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon campaigns">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">15</div>
+                        <div class="stat-label">Active Campaigns</div>
+                        <div class="stat-change positive">+3 this month</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon funds">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">₹45,67,000</div>
+                        <div class="stat-label">Total Funds Raised</div>
+                        <div class="stat-change positive">+₹8.5L this month</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon beneficiaries">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">12,500</div>
+                        <div class="stat-label">People Helped</div>
+                        <div class="stat-change positive">+1,200 this month</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon donors">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">2,340</div>
+                        <div class="stat-label">Total Donors</div>
+                        <div class="stat-change positive">+156 this month</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NGO Dashboard Content -->
+    <div class="ngo-dashboard">
+        <div class="container">
+            <div class="dashboard-grid">
+                <!-- Campaign Management -->
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h3 class="section-title">Campaign Management</h3>
+                        <button class="btn btn-primary btn-small">Create New</button>
+                    </div>
+                    <div class="campaigns-list">
+                        <div class="campaign-item active">
+                            <div class="campaign-info">
+                                <h4 class="campaign-title">Emergency Food Relief</h4>
+                                <div class="campaign-meta">
+                                    <span class="status urgent">Urgent</span>
+                                    <span class="category">Food & Nutrition</span>
+                                </div>
+                                <div class="campaign-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 68%"></div>
+                                    </div>
+                                    <div class="progress-details">
+                                        <span class="progress-text">₹6,80,000 / ₹10,00,000</span>
+                                        <span class="progress-percent">68%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="campaign-actions">
+                                <button class="btn btn-outline btn-small">Edit</button>
+                                <button class="btn btn-primary btn-small">Update</button>
+                            </div>
+                        </div>
+
+                        <div class="campaign-item">
+                            <div class="campaign-info">
+                                <h4 class="campaign-title">Winter Shelter Program</h4>
+                                <div class="campaign-meta">
+                                    <span class="status active">Active</span>
+                                    <span class="category">Shelter</span>
+                                </div>
+                                <div class="campaign-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 45%"></div>
+                                    </div>
+                                    <div class="progress-details">
+                                        <span class="progress-text">₹2,25,000 / ₹5,00,000</span>
+                                        <span class="progress-percent">45%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="campaign-actions">
+                                <button class="btn btn-outline btn-small">Edit</button>
+                                <button class="btn btn-primary btn-small">Update</button>
+                            </div>
+                        </div>
+
+                        <div class="campaign-item completed">
+                            <div class="campaign-info">
+                                <h4 class="campaign-title">School Renovation Project</h4>
+                                <div class="campaign-meta">
+                                    <span class="status completed">Completed</span>
+                                    <span class="category">Education</span>
+                                </div>
+                                <div class="campaign-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 100%"></div>
+                                    </div>
+                                    <div class="progress-details">
+                                        <span class="progress-text">₹3,50,000 / ₹3,50,000</span>
+                                        <span class="progress-percent">100%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="campaign-actions">
+                                <button class="btn btn-outline btn-small">Report</button>
+                                <button class="btn btn-primary btn-small">Share</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Request Verification -->
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h3 class="section-title">Pending Verifications</h3>
+                        <span class="section-badge">5 requests</span>
+                    </div>
+                    <div class="verification-list">
+                        <div class="verification-item">
+                            <div class="request-info">
+                                <h4 class="request-title">Medical Help Request</h4>
+                                <p class="request-user">Submitted by: Ramesh Kumar</p>
+                                <p class="request-description">Needs surgery for kidney stones. Documents attached.</p>
+                            </div>
+                            <div class="request-actions">
+                                <button class="btn btn-outline btn-small">Review</button>
+                                <button class="btn btn-success btn-small">Approve</button>
+                                <button class="btn btn-danger btn-small">Reject</button>
+                            </div>
+                        </div>
+
+                        <div class="verification-item">
+                            <div class="request-info">
+                                <h4 class="request-title">Education Support</h4>
+                                <p class="request-user">Submitted by: Sunita Sharma</p>
+                                <p class="request-description">School fees for two children. Income proof provided.</p>
+                            </div>
+                            <div class="request-actions">
+                                <button class="btn btn-outline btn-small">Review</button>
+                                <button class="btn btn-success btn-small">Approve</button>
+                                <button class="btn btn-danger btn-small">Reject</button>
+                            </div>
+                        </div>
+
+                        <div class="verification-item urgent">
+                            <div class="request-info">
+                                <h4 class="request-title">Emergency Food Aid</h4>
+                                <p class="request-user">Submitted by: Flood Relief Committee</p>
+                                <p class="request-description">Immediate food assistance for 200 families affected by floods.</p>
+                            </div>
+                            <div class="request-actions">
+                                <button class="btn btn-outline btn-small">Review</button>
+                                <button class="btn btn-success btn-small">Approve</button>
+                                <button class="btn btn-danger btn-small">Reject</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impact Reports -->
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h3 class="section-title">Impact Reports</h3>
+                        <button class="btn btn-outline btn-small">Generate Report</button>
+                    </div>
+                    <div class="impact-summary">
+                        <div class="impact-chart">
+                            <h4>Monthly Impact</h4>
+                            <div class="chart-placeholder">
+                                <div class="bar" style="height: 60%"></div>
+                                <div class="bar" style="height: 80%"></div>
+                                <div class="bar" style="height: 45%"></div>
+                                <div class="bar" style="height: 90%"></div>
+                                <div class="bar" style="height: 100%"></div>
+                                <div class="bar" style="height: 75%"></div>
+                            </div>
+                            <div class="chart-labels">
+                                <span>Jul</span>
+                                <span>Aug</span>
+                                <span>Sep</span>
+                                <span>Oct</span>
+                                <span>Nov</span>
+                                <span>Dec</span>
+                            </div>
+                        </div>
+                        <div class="impact-metrics">
+                            <div class="metric-item">
+                                <div class="metric-value">1,250</div>
+                                <div class="metric-label">Families Fed</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">300</div>
+                                <div class="metric-label">Children Educated</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-value">150</div>
+                                <div class="metric-label">Medical Cases</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Donations -->
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h3 class="section-title">Recent Donations</h3>
+                        <a href="#" class="section-link">View All</a>
+                    </div>
+                    <div class="donations-list">
+                        <div class="donation-item">
+                            <div class="donor-info">
+                                <img src="https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg?auto=compress&cs=tinysrgb&w=40&h=40" alt="Donor" class="donor-avatar">
+                                <div class="donor-details">
+                                    <span class="donor-name">Rajesh Kumar</span>
+                                    <span class="donation-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="donation-amount">₹5,000</div>
+                            <div class="donation-campaign">Emergency Food Relief</div>
+                        </div>
+
+                        <div class="donation-item">
+                            <div class="donor-info">
+                                <img src="https://images.pexels.com/photos/3791136/pexels-photo-3791136.jpeg?auto=compress&cs=tinysrgb&w=40&h=40" alt="Donor" class="donor-avatar">
+                                <div class="donor-details">
+                                    <span class="donor-name">Priya Sharma</span>
+                                    <span class="donation-time">5 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="donation-amount">₹2,500</div>
+                            <div class="donation-campaign">Winter Shelter Program</div>
+                        </div>
+
+                        <div class="donation-item">
+                            <div class="donor-info">
+                                <div class="donor-avatar anonymous">A</div>
+                                <div class="donor-details">
+                                    <span class="donor-name">Anonymous</span>
+                                    <span class="donation-time">1 day ago</span>
+                                </div>
+                            </div>
+                            <div class="donation-amount">₹10,000</div>
+                            <div class="donation-campaign">Emergency Food Relief</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Volunteer Management -->
+                <div class="dashboard-section full-width">
+                    <div class="section-header">
+                        <h3 class="section-title">Volunteer Management</h3>
+                        <button class="btn btn-primary btn-small">Post Opportunity</button>
+                    </div>
+                    <div class="volunteers-grid">
+                        <div class="volunteer-opportunity">
+                            <div class="opportunity-info">
+                                <h4 class="opportunity-title">Food Distribution Drive</h4>
+                                <p class="opportunity-description">Help distribute food packages to flood-affected families</p>
+                                <div class="opportunity-details">
+                                    <span class="detail-item">📅 Dec 25, 2024</span>
+                                    <span class="detail-item">⏰ 9:00 AM - 2:00 PM</span>
+                                    <span class="detail-item">📍 Community Center</span>
+                                </div>
+                            </div>
+                            <div class="opportunity-stats">
+                                <div class="stat">
+                                    <span class="stat-value">15</span>
+                                    <span class="stat-label">Volunteers Needed</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">8</span>
+                                    <span class="stat-label">Registered</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="volunteer-opportunity">
+                            <div class="opportunity-info">
+                                <h4 class="opportunity-title">Teaching Session</h4>
+                                <p class="opportunity-description">Teach basic math and English to underprivileged children</p>
+                                <div class="opportunity-details">
+                                    <span class="detail-item">📅 Dec 28, 2024</span>
+                                    <span class="detail-item">⏰ 4:00 PM - 6:00 PM</span>
+                                    <span class="detail-item">📍 Community School</span>
+                                </div>
+                            </div>
+                            <div class="opportunity-stats">
+                                <div class="stat">
+                                    <span class="stat-value">5</span>
+                                    <span class="stat-label">Volunteers Needed</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">3</span>
+                                    <span class="stat-label">Registered</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="https://images.pexels.com/photos/6995244/pexels-photo-6995244.jpeg?auto=compress&cs=tinysrgb&w=50&h=50" alt="KindNet Logo" class="footer-logo">
+                        <span class="brand-text">KindNet</span>
+                    </div>
+                    <p class="footer-description">Connecting hearts, changing lives. Together for a better tomorrow.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">For Organizations</h4>
+                    <ul class="footer-links">
+                        <li><a href="ngo.html">NGO Portal</a></li>
+                        <li><a href="showcase.html">Corporate Showcase</a></li>
+                        <li><a href="#">Verification Process</a></li>
+                        <li><a href="#">Campaign Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 KindNet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Campaign Creation Modal -->
+    <div id="campaign-modal" class="modal">
+        <div class="modal-content large">
+            <span class="modal-close">&times;</span>
+            <div class="modal-header">
+                <h3 class="modal-title">Create New Campaign</h3>
+                <p class="modal-subtitle">Start a new fundraising campaign for your cause</p>
+            </div>
+            <form class="campaign-form">
+                <div class="form-section">
+                    <h4>Campaign Details</h4>
+                    
+                    <!-- Campaign Images -->
+                    <div class="form-group">
+                        <label>Campaign Images</label>
+                        <div class="image-upload-section">
+                            <div class="image-upload-zone">
+                                <div class="upload-placeholder">
+                                    <div class="upload-placeholder-icon">📷</div>
+                                    <div class="upload-placeholder-text">
+                                        <h4>Upload Campaign Images</h4>
+                                        <p>Add photos that showcase your campaign</p>
+                                        <p>Drag & drop images here or <span class="upload-browse-btn">browse files</span></p>
+                                    </div>
+                                </div>
+                                <input type="file" class="image-input" multiple accept="image/*">
+                            </div>
+                            <div class="image-preview-gallery"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="campaign-title">Campaign Title</label>
+                        <input type="text" id="campaign-title" required placeholder="Enter campaign title">
+                    </div>
+                    <div class="form-group">
+                        <label for="campaign-description">Description</label>
+                        <textarea id="campaign-description" required placeholder="Describe your campaign and its impact"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="campaign-category">Category</label>
+                            <select id="campaign-category" required>
+                                <option value="">Select Category</option>
+                                <option value="food">Food & Nutrition</option>
+                                <option value="education">Education</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="shelter">Shelter</option>
+                                <option value="emergency">Emergency Relief</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="campaign-goal">Funding Goal (₹)</label>
+                            <input type="number" id="campaign-goal" required placeholder="100000">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h4>Timeline & Location</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="campaign-start">Start Date</label>
+                            <input type="date" id="campaign-start" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="campaign-end">End Date</label>
+                            <input type="date" id="campaign-end" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="campaign-location">Location</label>
+                        <input type="text" id="campaign-location" required placeholder="City, State">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h4>Campaign Settings</h4>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="campaign-urgent">
+                            <span class="checkmark"></span>
+                            Mark as urgent
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="campaign-featured">
+                            <span class="checkmark"></span>
+                            Request featured placement
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline">Save as Draft</button>
+                    <button type="submit" class="btn btn-primary">Create Campaign</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

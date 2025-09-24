@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Causes - KindNet</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="https://images.pexels.com/photos/6995244/pexels-photo-6995244.jpeg?auto=compress&cs=tinysrgb&w=50&h=50" alt="KindNet Logo" class="nav-logo">
+                <span class="brand-text">KindNet</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="donate.html" class="nav-link active">Browse Causes</a>
+                <a href="donor.html" class="nav-link">Donor Hub</a>
+                <a href="ngo.html" class="nav-link">NGO Portal</a>
+                <a href="receiver.html" class="nav-link">Request Help</a>
+                <a href="showcase.html" class="nav-link">Showcase</a>
+                <button class="btn btn-primary">Sign In</button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="page-title">Discover Causes Near You</h1>
+                <p class="page-subtitle">Find verified donation opportunities and make a direct impact in your community</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map and Filters -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-layout">
+                <div class="map-filters">
+                    <div class="filter-group">
+                        <h4 class="filter-title">Category</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" value="all" checked>
+                                <span class="filter-label">All Categories</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="food">
+                                <span class="filter-label">🍽️ Food & Nutrition</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="clothes">
+                                <span class="filter-label">👕 Clothes & Shelter</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="books">
+                                <span class="filter-label">📚 Education & Books</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="medicine">
+                                <span class="filter-label">🏥 Healthcare & Medicine</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="money">
+                                <span class="filter-label">💰 Financial Support</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="urgent">
+                                <span class="filter-label">🚨 Urgent Help</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 class="filter-title">Distance</h4>
+                        <div class="distance-slider">
+                            <input type="range" id="distance" min="1" max="50" value="10" class="slider">
+                            <div class="slider-labels">
+                                <span>1 km</span>
+                                <span id="distance-value">10 km</span>
+                                <span>50 km</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 class="filter-title">Urgency</h4>
+                        <select class="filter-select">
+                            <option value="">All Urgencies</option>
+                            <option value="urgent">Urgent (24-48 hours)</option>
+                            <option value="moderate">Moderate (1 week)</option>
+                            <option value="ongoing">Ongoing</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 class="filter-title">Organization</h4>
+                        <select class="filter-select">
+                            <option value="">All Organizations</option>
+                            <option value="ngo">NGOs</option>
+                            <option value="individual">Individuals</option>
+                            <option value="community">Community Groups</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-primary btn-full" id="apply-filters">Apply Filters</button>
+                    <button class="btn btn-outline btn-full" id="clear-filters">Clear All</button>
+                </div>
+
+                <div class="map-container">
+                    <div id="donation-map" class="interactive-map"></div>
+                    <div class="map-controls">
+                        <button class="btn btn-outline" id="locate-me">📍 Locate Me</button>
+                        <button class="btn btn-outline" id="toggle-view">📋 List View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Causes List View -->
+    <section class="causes-list" id="causes-list">
+        <div class="container">
+            <div class="list-header">
+                <div class="list-info">
+                    <h3 class="list-title">Available Causes</h3>
+                    <p class="list-subtitle"><span id="causes-count">247</span> causes found near you</p>
+                </div>
+                <div class="sort-options">
+                    <select class="sort-select">
+                        <option value="distance">Sort by Distance</option>
+                        <option value="urgency">Sort by Urgency</option>
+                        <option value="amount">Sort by Amount Needed</option>
+                        <option value="recent">Most Recent</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="causes-grid">
+                <div class="cause-card urgent">
+                    <div class="cause-header">
+                        <div class="cause-image">
+                            <img src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=300&h=200" alt="Emergency Food">
+                            <div class="cause-badge urgent">Urgent</div>
+                            <div class="cause-category food">Food</div>
+                        </div>
+                        <div class="cause-distance">1.2 km away</div>
+                    </div>
+                    <div class="cause-content">
+                        <h4 class="cause-title">Emergency Food for Flood Victims</h4>
+                        <p class="cause-org">Relief Foundation • Verified NGO</p>
+                        <p class="cause-description">Immediate food assistance needed for 500 families affected by recent floods. Your contribution will provide meals for families who have lost everything.</p>
+                        
+                        <div class="cause-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 68%"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-text">₹6,80,000 raised of ₹10,00,000</span>
+                                <span class="progress-percent">68%</span>
+                            </div>
+                        </div>
+
+                        <div class="cause-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">350</span>
+                                <span class="stat-label">Families Helped</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Days Left</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">125</span>
+                                <span class="stat-label">Donors</span>
+                            </div>
+                        </div>
+
+                        <div class="cause-actions">
+                            <button class="btn btn-primary donate-btn" data-cause="emergency-food">Donate Now</button>
+                            <button class="btn btn-outline">Volunteer</button>
+                            <button class="btn btn-outline">Share</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cause-card">
+                    <div class="cause-header">
+                        <div class="cause-image">
+                            <img src="https://images.pexels.com/photos/8926553/pexels-photo-8926553.jpeg?auto=compress&cs=tinysrgb&w=300&h=200" alt="School Books">
+                            <div class="cause-category books">Education</div>
+                        </div>
+                        <div class="cause-distance">2.8 km away</div>
+                    </div>
+                    <div class="cause-content">
+                        <h4 class="cause-title">School Books for Rural Children</h4>
+                        <p class="cause-org">Education First • Verified NGO</p>
+                        <p class="cause-description">Help provide textbooks and educational materials for 200 underprivileged students in rural areas.</p>
+                        
+                        <div class="cause-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 42%"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-text">₹42,000 raised of ₹1,00,000</span>
+                                <span class="progress-percent">42%</span>
+                            </div>
+                        </div>
+
+                        <div class="cause-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">85</span>
+                                <span class="stat-label">Students Helped</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">Days Left</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">34</span>
+                                <span class="stat-label">Donors</span>
+                            </div>
+                        </div>
+
+                        <div class="cause-actions">
+                            <button class="btn btn-primary donate-btn" data-cause="school-books">Donate Now</button>
+                            <button class="btn btn-outline">Volunteer</button>
+                            <button class="btn btn-outline">Share</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cause-card">
+                    <div class="cause-header">
+                        <div class="cause-image">
+                            <img src="https://images.pexels.com/photos/6749773/pexels-photo-6749773.jpeg?auto=compress&cs=tinysrgb&w=300&h=200" alt="Medical Equipment">
+                            <div class="cause-category medicine">Healthcare</div>
+                        </div>
+                        <div class="cause-distance">4.5 km away</div>
+                    </div>
+                    <div class="cause-content">
+                        <h4 class="cause-title">Medical Equipment for Rural Clinic</h4>
+                        <p class="cause-org">Health Heroes • Verified NGO</p>
+                        <p class="cause-description">Essential medical equipment needed to serve 5,000 patients in remote villages.</p>
+                        
+                        <div class="cause-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-text">₹7,80,000 raised of ₹10,00,000</span>
+                                <span class="progress-percent">78%</span>
+                            </div>
+                        </div>
+
+                        <div class="cause-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">2,340</span>
+                                <span class="stat-label">Patients Served</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">8</span>
+                                <span class="stat-label">Days Left</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">89</span>
+                                <span class="stat-label">Donors</span>
+                            </div>
+                        </div>
+
+                        <div class="cause-actions">
+                            <button class="btn btn-primary donate-btn" data-cause="medical-equipment">Donate Now</button>
+                            <button class="btn btn-outline">Volunteer</button>
+                            <button class="btn btn-outline">Share</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cause-card">
+                    <div class="cause-header">
+                        <div class="cause-image">
+                            <img src="https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=300&h=200" alt="Winter Clothes">
+                            <div class="cause-category clothes">Clothing</div>
+                        </div>
+                        <div class="cause-distance">6.1 km away</div>
+                    </div>
+                    <div class="cause-content">
+                        <h4 class="cause-title">Winter Clothes for Homeless</h4>
+                        <p class="cause-org">Community Care • Individual Request</p>
+                        <p class="cause-description">Warm clothing and blankets needed for homeless individuals during winter season.</p>
+                        
+                        <div class="cause-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 55%"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-text">₹27,500 raised of ₹50,000</span>
+                                <span class="progress-percent">55%</span>
+                            </div>
+                        </div>
+
+                        <div class="cause-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">45</span>
+                                <span class="stat-label">People Helped</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">15</span>
+                                <span class="stat-label">Days Left</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">28</span>
+                                <span class="stat-label">Donors</span>
+                            </div>
+                        </div>
+
+                        <div class="cause-actions">
+                            <button class="btn btn-primary donate-btn" data-cause="winter-clothes">Donate Now</button>
+                            <button class="btn btn-outline">Volunteer</button>
+                            <button class="btn btn-outline">Share</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cause-card">
+                    <div class="cause-header">
+                        <div class="cause-image">
+                            <img src="https://images.pexels.com/photos/8923543/pexels-photo-8923543.jpeg?auto=compress&cs=tinysrgb&w=300&h=200" alt="Cancer Treatment">
+                            <div class="cause-category money">Financial</div>
+                        </div>
+                        <div class="cause-distance">7.3 km away</div>
+                    </div>
+                    <div class="cause-content">
+                        <h4 class="cause-title">Cancer Treatment for Young Mother</h4>
+                        <p class="cause-org">Hope Foundation • Verified Individual</p>
+                        <p class="cause-description">Help Priya, a 28-year-old mother of two, get life-saving cancer treatment.</p>
+                        
+                        <div class="cause-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 31%"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-text">₹1,55,000 raised of ₹5,00,000</span>
+                                <span class="progress-percent">31%</span>
+                            </div>
+                        </div>
+
+                        <div class="cause-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">1</span>
+                                <span class="stat-label">Patient</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">25</span>
+                                <span class="stat-label">Days Left</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">67</span>
+                                <span class="stat-label">Donors</span>
+                            </div>
+                        </div>
+
+                        <div class="cause-actions">
+                            <button class="btn btn-primary donate-btn" data-cause="cancer-treatment">Donate Now</button>
+                            <button class="btn btn-outline">Volunteer</button>
+                            <button class="btn btn-outline">Share</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cause-card">
+                    <div class="cause-header">
+                        <div class="cause-image">
+                            <img src="https://images.pexels.com/photos/8923542/pexels-photo-8923542.jpeg?auto=compress&cs=tinysrgb&w=300&h=200" alt="Orphanage Support">
+                            <div class="cause-category food">Food</div>
+                        </div>
+                        <div class="cause-distance">9.7 km away</div>
+                    </div>
+                    <div class="cause-content">
+                        <h4 class="cause-title">Monthly Groceries for Orphanage</h4>
+                        <p class="cause-org">Children's Home • Verified NGO</p>
+                        <p class="cause-description">Monthly grocery supplies needed for 75 children at the local orphanage.</p>
+                        
+                        <div class="cause-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 89%"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-text">₹89,000 raised of ₹1,00,000</span>
+                                <span class="progress-percent">89%</span>
+                            </div>
+                        </div>
+
+                        <div class="cause-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">75</span>
+                                <span class="stat-label">Children Helped</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">5</span>
+                                <span class="stat-label">Days Left</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">156</span>
+                                <span class="stat-label">Donors</span>
+                            </div>
+                        </div>
+
+                        <div class="cause-actions">
+                            <button class="btn btn-primary donate-btn" data-cause="orphanage-groceries">Donate Now</button>
+                            <button class="btn btn-outline">Volunteer</button>
+                            <button class="btn btn-outline">Share</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button class="btn btn-outline">← Previous</button>
+                <div class="page-numbers">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <span>...</span>
+                    <button class="page-btn">12</button>
+                </div>
+                <button class="btn btn-outline">Next →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="https://images.pexels.com/photos/6995244/pexels-photo-6995244.jpeg?auto=compress&cs=tinysrgb&w=50&h=50" alt="KindNet Logo" class="footer-logo">
+                        <span class="brand-text">KindNet</span>
+                    </div>
+                    <p class="footer-description">Connecting hearts, changing lives. Together for a better tomorrow.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">For Donors</h4>
+                    <ul class="footer-links">
+                        <li><a href="donate.html">Browse Causes</a></li>
+                        <li><a href="donor.html">Donor Dashboard</a></li>
+                        <li><a href="#">Impact Reports</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 KindNet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Donation Modal -->
+    <div id="donation-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-header">
+                <h3 class="modal-title">Make a Donation</h3>
+                <p class="modal-subtitle" id="modal-cause-title">Emergency Food Relief for Flood Victims</p>
+            </div>
+            <form class="donation-form">
+                <div class="amount-selector">
+                    <h4>Select Amount</h4>
+                    <div class="amount-options">
+                        <button type="button" class="amount-btn" data-amount="500">₹500</button>
+                        <button type="button" class="amount-btn" data-amount="1000">₹1,000</button>
+                        <button type="button" class="amount-btn" data-amount="2500">₹2,500</button>
+                        <button type="button" class="amount-btn" data-amount="5000">₹5,000</button>
+                    </div>
+                    <input type="number" class="amount-input" placeholder="Enter custom amount" min="100">
+                </div>
+                
+                <div class="donor-details">
+                    <h4>Your Details</h4>
+                    <div class="form-group">
+                        <label for="donor-name">Full Name</label>
+                        <input type="text" id="donor-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="donor-email">Email Address</label>
+                        <input type="email" id="donor-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="donor-phone">Phone Number</label>
+                        <input type="tel" id="donor-phone" required>
+                    </div>
+                </div>
+
+                <div class="donation-options">
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="recurring"> 
+                            <span class="checkmark"></span>
+                            Make this a monthly donation
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="anonymous">
+                            <span class="checkmark"></span>
+                            Donate anonymously
+                        </label>
+                    </div>
+                </div>
+
+                <div class="donation-summary">
+                    <div class="summary-row">
+                        <span>Donation Amount:</span>
+                        <span id="donation-amount">₹0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Processing Fee:</span>
+                        <span id="processing-fee">₹0</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total-amount">₹0</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full btn-large">Proceed to Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

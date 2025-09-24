@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Help - KindNet</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="https://images.pexels.com/photos/6995244/pexels-photo-6995244.jpeg?auto=compress&cs=tinysrgb&w=50&h=50" alt="KindNet Logo" class="nav-logo">
+                <span class="brand-text">KindNet</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="donate.html" class="nav-link">Browse Causes</a>
+                <a href="donor.html" class="nav-link">Donor Hub</a>
+                <a href="ngo.html" class="nav-link">NGO Portal</a>
+                <a href="receiver.html" class="nav-link active">Request Help</a>
+                <a href="showcase.html" class="nav-link">Showcase</a>
+                <button class="btn btn-primary">Sign In</button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header receiver-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="page-title">Request Help</h1>
+                <p class="page-subtitle">Submit your request for assistance. All requests are verified by our partner NGOs to ensure authenticity and proper support.</p>
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <span class="trust-icon">✓</span>
+                        <span class="trust-text">NGO Verified</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">🔒</span>
+                        <span class="trust-text">Secure & Private</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">⚡</span>
+                        <span class="trust-text">Fast Response</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Request Form -->
+    <section class="request-form-section">
+        <div class="container">
+            <div class="form-layout">
+                <div class="form-content">
+                    <div class="form-header">
+                        <h2>Submit Your Request</h2>
+                        <p>Please provide detailed information about your situation to help us connect you with the right support.</p>
+                    </div>
+
+                    <form class="help-request-form" id="help-request-form">
+                        <!-- Personal Information -->
+                        <div class="form-section">
+                            <h3 class="section-title">Personal Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="full-name">Full Name *</label>
+                                    <input type="text" id="full-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="age">Age</label>
+                                    <input type="number" id="age" min="1" max="120">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address *</label>
+                                <textarea id="address" required placeholder="Enter your complete address"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Help Category -->
+                        <div class="form-section">
+                            <h3 class="section-title">Type of Help Needed</h3>
+                            <div class="help-categories">
+                                <label class="category-card">
+                                    <input type="radio" name="help-category" value="food" required>
+                                    <div class="category-content">
+                                        <div class="category-icon">🍽️</div>
+                                        <div class="category-title">Food & Nutrition</div>
+                                        <div class="category-desc">Meals, groceries, nutrition support</div>
+                                    </div>
+                                </label>
+                                <label class="category-card">
+                                    <input type="radio" name="help-category" value="healthcare" required>
+                                    <div class="category-content">
+                                        <div class="category-icon">🏥</div>
+                                        <div class="category-title">Healthcare</div>
+                                        <div class="category-desc">Medical treatment, medicines</div>
+                                    </div>
+                                </label>
+                                <label class="category-card">
+                                    <input type="radio" name="help-category" value="education" required>
+                                    <div class="category-content">
+                                        <div class="category-icon">📚</div>
+                                        <div class="category-title">Education</div>
+                                        <div class="category-desc">School fees, books, supplies</div>
+                                    </div>
+                                </label>
+                                <label class="category-card">
+                                    <input type="radio" name="help-category" value="shelter" required>
+                                    <div class="category-content">
+                                        <div class="category-icon">🏠</div>
+                                        <div class="category-title">Shelter</div>
+                                        <div class="category-desc">Housing, clothing, basic needs</div>
+                                    </div>
+                                </label>
+                                <label class="category-card">
+                                    <input type="radio" name="help-category" value="financial" required>
+                                    <div class="category-content">
+                                        <div class="category-icon">💰</div>
+                                        <div class="category-title">Financial Support</div>
+                                        <div class="category-desc">Emergency funds, debt relief</div>
+                                    </div>
+                                </label>
+                                <label class="category-card">
+                                    <input type="radio" name="help-category" value="emergency" required>
+                                    <div class="category-content">
+                                        <div class="category-icon">🚨</div>
+                                        <div class="category-title">Emergency Help</div>
+                                        <div class="category-desc">Urgent assistance needed</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Request Details -->
+                        <div class="form-section">
+                            <h3 class="section-title">Request Details</h3>
+                            <div class="form-group">
+                                <label for="request-title">Request Title *</label>
+                                <input type="text" id="request-title" required placeholder="Brief title describing your need">
+                            </div>
+                            <div class="form-group">
+                                <label for="request-description">Detailed Description *</label>
+                                <textarea id="request-description" required rows="6" placeholder="Please provide a detailed description of your situation, why you need help, and how it will be used"></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="amount-needed">Amount Needed (₹)</label>
+                                    <input type="number" id="amount-needed" placeholder="Enter amount if financial help is needed">
+                                </div>
+                                <div class="form-group">
+                                    <label for="urgency">Urgency Level *</label>
+                                    <select id="urgency" required>
+                                        <option value="">Select urgency</option>
+                                        <option value="low">Low - Can wait a few weeks</option>
+                                        <option value="medium">Medium - Needed within a week</option>
+                                        <option value="high">High - Needed within 2-3 days</option>
+                                        <option value="critical">Critical - Immediate help needed</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Supporting Documents -->
+                        <div class="form-section">
+                            <h3 class="section-title">Supporting Documents</h3>
+                            <p class="section-description">Please provide relevant documents and images to help verify your request (medical reports, bills, certificates, photos, etc.)</p>
+                            <div class="file-upload-area">
+                                <div class="upload-zone" id="upload-zone">
+                                    <div class="upload-icon">📁</div>
+                                    <div class="upload-text">
+                                        <p><strong>Drag & drop files here</strong></p>
+                                        <p>or <span class="upload-button">browse files</span></p>
+                                    </div>
+                                    <input type="file" id="documents" multiple accept=".jpg,.jpeg,.png,.gif,.webp,.pdf,.doc,.docx" class="file-input">
+                                </div>
+                                <div class="file-list" id="file-list"></div>
+                            </div>
+                            
+                            <!-- Image Upload Section -->
+                            <div class="image-upload-section">
+                                <h4>Upload Images</h4>
+                                <p class="section-description">Add photos that help illustrate your situation or need</p>
+                                <div class="image-upload-zone">
+                                    <div class="upload-placeholder">
+                                        <div class="upload-placeholder-icon">📷</div>
+                                        <div class="upload-placeholder-text">
+                                            <h4>Upload Images</h4>
+                                            <p>Drag & drop images here or <span class="upload-browse-btn">browse files</span></p>
+                                            <p>Supports: JPG, PNG, GIF, WebP (Max 5MB each)</p>
+                                        </div>
+                                    </div>
+                                    <input type="file" class="image-input" multiple accept="image/*">
+                                </div>
+                                <div class="image-preview-gallery"></div>
+                            </div>
+                        </div>
+
+                        <!-- Family Information -->
+                        <div class="form-section">
+                            <h3 class="section-title">Family Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="family-size">Family Size</label>
+                                    <input type="number" id="family-size" min="1" placeholder="Number of family members">
+                                </div>
+                                <div class="form-group">
+                                    <label for="monthly-income">Monthly Household Income (₹)</label>
+                                    <input type="number" id="monthly-income" placeholder="Enter monthly income">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="family-details">Family Details</label>
+                                <textarea id="family-details" placeholder="Brief information about family members, their ages, health conditions, etc."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Verification Consent -->
+                        <div class="form-section">
+                            <h3 class="section-title">Verification & Consent</h3>
+                            <div class="consent-items">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="info-accuracy" required>
+                                    <span class="checkmark"></span>
+                                    I confirm that all information provided is accurate and truthful
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="verification-consent" required>
+                                    <span class="checkmark"></span>
+                                    I consent to verification of my request by NGO partners
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="contact-consent" required>
+                                    <span class="checkmark"></span>
+                                    I agree to be contacted by NGOs and donors for verification
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="privacy-consent" required>
+                                    <span class="checkmark"></span>
+                                    I have read and agree to the <a href="#" class="privacy-link">Privacy Policy</a>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline">Save as Draft</button>
+                            <button type="submit" class="btn btn-primary btn-large">Submit Request</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Request Guidelines -->
+                <div class="guidelines-sidebar">
+                    <div class="guidelines-card">
+                        <h3>Request Guidelines</h3>
+                        <ul class="guidelines-list">
+                            <li>✓ Provide accurate and complete information</li>
+                            <li>✓ Upload relevant supporting documents</li>
+                            <li>✓ Be specific about your needs and situation</li>
+                            <li>✓ Respond promptly to verification requests</li>
+                        </ul>
+                    </div>
+
+                    <div class="guidelines-card">
+                        <h3>What Happens Next?</h3>
+                        <div class="process-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-text">Request submitted for review</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-text">NGO verification process (1-3 days)</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-text">Request published on platform</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-text">Connect with donors and supporters</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guidelines-card">
+                        <h3>Need Help?</h3>
+                        <p>Our support team is here to assist you with your request.</p>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <span class="contact-icon">📞</span>
+                                <span>+91 9876543210</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">📧</span>
+                                <span>help@kindnet.org</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Active Requests -->
+    <section class="active-requests">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Active Help Requests</h2>
+                <p class="section-subtitle">Recent requests from community members seeking support</p>
+            </div>
+            
+            <div class="requests-grid">
+                <div class="request-card urgent">
+                    <div class="request-header">
+                        <div class="request-category healthcare">Healthcare</div>
+                        <div class="request-urgency critical">Critical</div>
+                    </div>
+                    <div class="request-content">
+                        <h4 class="request-title">Emergency Surgery for Heart Condition</h4>
+                        <p class="request-description">45-year-old father of three needs immediate heart surgery. Family unable to afford medical expenses.</p>
+                        <div class="request-meta">
+                            <span class="meta-item">
+                                <span class="meta-label">Amount Needed:</span>
+                                <span class="meta-value">₹5,00,000</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Location:</span>
+                                <span class="meta-value">Mumbai, MH</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Verified by:</span>
+                                <span class="meta-value">Health Heroes NGO</span>
+                            </span>
+                        </div>
+                        <div class="request-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 35%"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-text">₹1,75,000 raised</span>
+                                <span class="progress-percent">35%</span>
+                            </div>
+                        </div>
+                        <div class="request-actions">
+                            <button class="btn btn-primary">Donate Now</button>
+                            <button class="btn btn-outline">Share</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="request-card">
+                    <div class="request-header">
+                        <div class="request-category education">Education</div>
+                        <div class="request-urgency medium">Medium</div>
+                    </div>
+                    <div class="request-content">
+                        <h4 class="request-title">School Fees for Talented Student</h4>
+                        <p class="request-description">Brilliant student from low-income family needs help with engineering college fees.</p>
+                        <div class="request-meta">
+                            <span class="meta-item">
+                                <span class="meta-label">Amount Needed:</span>
+                                <span class="meta-value">₹1,50,000</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Location:</span>
+                                <span class="meta-value">Pune, MH</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Verified by:</span>
+                                <span class="meta-value">Education First NGO</span>
+                            </span>
+                        </div>
+                        <div class="request-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 62%"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-text">₹93,000 raised</span>
+                                <span class="progress-percent">62%</span>
+                            </div>
+                        </div>
+                        <div class="request-actions">
+                            <button class="btn btn-primary">Donate Now</button>
+                            <button class="btn btn-outline">Share</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="request-card">
+                    <div class="request-header">
+                        <div class="request-category shelter">Shelter</div>
+                        <div class="request-urgency high">High</div>
+                    </div>
+                    <div class="request-content">
+                        <h4 class="request-title">Flood Victims Need Temporary Shelter</h4>
+                        <p class="request-description">50 families displaced by recent floods need temporary shelter and basic necessities.</p>
+                        <div class="request-meta">
+                            <span class="meta-item">
+                                <span class="meta-label">Amount Needed:</span>
+                                <span class="meta-value">₹2,00,000</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Location:</span>
+                                <span class="meta-value">Chennai, TN</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Verified by:</span>
+                                <span class="meta-value">Relief Foundation</span>
+                            </span>
+                        </div>
+                        <div class="request-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span class="progress-text">₹1,56,000 raised</span>
+                                <span class="progress-percent">78%</span>
+                            </div>
+                        </div>
+                        <div class="request-actions">
+                            <button class="btn btn-primary">Donate Now</button>
+                            <button class="btn btn-outline">Share</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-footer">
+                <a href="donate.html" class="btn btn-outline">View All Requests</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="https://images.pexels.com/photos/6995244/pexels-photo-6995244.jpeg?auto=compress&cs=tinysrgb&w=50&h=50" alt="KindNet Logo" class="footer-logo">
+                        <span class="brand-text">KindNet</span>
+                    </div>
+                    <p class="footer-description">Connecting hearts, changing lives. Together for a better tomorrow.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Request Help</h4>
+                    <ul class="footer-links">
+                        <li><a href="receiver.html">Submit Request</a></li>
+                        <li><a href="#">Verification Process</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 KindNet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

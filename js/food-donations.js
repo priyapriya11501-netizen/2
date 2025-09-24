@@ -44,29 +44,57 @@ function initializeFoodDonations() {
 
     if (loginBtn) {
         loginBtn.addEventListener('click', function() {
-            window.location.href = 'login.html';
+            if (loginBtn.getAttribute('href')) {
+                // It's already a link, let it navigate normally
+                return;
+            } else {
+                window.location.href = 'login.html';
+            }
         });
     }
 }
 
 function updateNavigationForUser() {
-    const loginBtn = document.getElementById('login-btn');
-    const userInfo = document.getElementById('user-info');
-    const userName = document.getElementById('user-name');
-    const logoutBtn = document.getElementById('logout-btn');
-
-    if (loginBtn && userInfo) {
-        loginBtn.style.display = 'none';
-        userInfo.style.display = 'flex';
-        if (userName) userName.textContent = currentUser.name;
-        
-        if (logoutBtn) {
-            logoutBtn.addEventListener('click', function() {
-                localStorage.removeItem('kindnet_user');
-                window.location.href = 'login.html';
-            });
-        }
+    const navMenu = document.querySelector('.nav-menu');
+    const loginBtn = navMenu.querySelector('.btn-primary');
+    
+    if (loginBtn && loginBtn.textContent.includes('Sign In')) {
+        // Replace login button with user info
+        const userInfo = document.createElement('div');
+        userInfo.className = 'user-info';
+        userInfo.innerHTML = `
+            <span class="user-name">${currentUser.name}</span>
+            <span class="user-type">(${currentUser.type})</span>
+            <button class="btn btn-outline btn-small" onclick="logout()">Logout</button>
+        `;
+        loginBtn.parentNode.replaceChild(userInfo, loginBtn);
     }
+    
+    // Update navigation links based on user type
+    updateNavigationLinks();
+}
+
+function updateNavigationLinks() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        
+        // Hide/show links based on user type
+        if (href === 'ngo.html' && currentUser?.type !== 'ngo') {
+            link.style.display = 'none';
+        } else if (href === 'donor.html' && currentUser?.type !== 'donor') {
+            link.style.display = 'none';
+        } else if (currentUser) {
+            link.style.display = 'inline-block';
+        }
+    });
+}
+
+function logout() {
+    localStorage.removeItem('kindnet_user');
+    currentUser = null;
+    window.location.href = 'index.html';
 }
 
 function checkUserAccess() {
@@ -80,7 +108,8 @@ function checkUserAccess() {
                 // Donors can post food but not accept
                 if (postFoodBtn) postFoodBtn.style.display = 'inline-block';
                 acceptBtns.forEach(btn => {
-                    btn.style.display = 'none';
+                    btn.style.display = 'inline-block';
+                    btn.addEventListener('click', handleAcceptDonation);
                 });
                 break;
             case 'recipient':

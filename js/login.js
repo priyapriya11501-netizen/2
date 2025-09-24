@@ -131,13 +131,13 @@ function initializeLogin() {
     function redirectUser(userType) {
         switch(userType) {
             case 'donor':
-                window.location.href = 'food-donations.html';
+                window.location.href = 'donor.html';
                 break;
             case 'ngo':
                 window.location.href = 'ngo.html';
                 break;
             case 'recipient':
-                window.location.href = 'food-donations.html';
+                window.location.href = 'receiver.html';
                 break;
             default:
                 window.location.href = 'index.html';
@@ -159,28 +159,48 @@ function checkUserSession() {
 
 // Update navigation based on login status
 function updateNavigation(user) {
-    const loginBtn = document.getElementById('login-btn');
-    const userInfo = document.getElementById('user-info');
-    const userName = document.getElementById('user-name');
-    const logoutBtn = document.getElementById('logout-btn');
-
-    if (user && loginBtn && userInfo) {
-        loginBtn.style.display = 'none';
-        userInfo.style.display = 'flex';
-        if (userName) userName.textContent = user.name;
-        
-        if (logoutBtn) {
-            logoutBtn.addEventListener('click', function() {
-                logout();
-            });
+    const navMenus = document.querySelectorAll('.nav-menu');
+    
+    navMenus.forEach(navMenu => {
+        const loginBtn = navMenu.querySelector('.btn-primary');
+        if (loginBtn && loginBtn.textContent.includes('Sign In')) {
+            // Replace login button with user info
+            const userInfo = document.createElement('div');
+            userInfo.className = 'user-info';
+            userInfo.innerHTML = `
+                <span class="user-name">${user.name}</span>
+                <span class="user-type">(${user.type})</span>
+                <button class="btn btn-outline btn-small" onclick="logout()">Logout</button>
+            `;
+            loginBtn.parentNode.replaceChild(userInfo, loginBtn);
         }
-    }
+    });
+    
+    // Update navigation links based on user type
+    updateNavigationLinks(user);
+}
+
+function updateNavigationLinks(user) {
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        
+        // Hide/show links based on user type
+        if (href === 'ngo.html' && user.type !== 'ngo') {
+            link.style.display = 'none';
+        } else if (href === 'donor.html' && user.type !== 'donor') {
+            link.style.display = 'none';
+        } else {
+            link.style.display = 'inline-block';
+        }
+    });
 }
 
 // Logout functionality
 function logout() {
     localStorage.removeItem('kindnet_user');
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
 }
 
 // Initialize session check on page load
